@@ -10,6 +10,7 @@ public class LoginForm extends JDialog{
     private JPasswordField JPasswordField1;
     private JButton wyjdzButton;
     private JButton zalogujButton;
+    private JButton rejestracjaButton;
 
 
     public LoginForm(JFrame parent) {
@@ -49,6 +50,14 @@ public class LoginForm extends JDialog{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
+            }
+        });
+        rejestracjaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                RegistrationForm registrationForm = new RegistrationForm(parent);
+                registrationForm.setVisible(true);
             }
         });
     }
