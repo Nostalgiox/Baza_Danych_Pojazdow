@@ -13,13 +13,15 @@ public class LoginForm extends JDialog{
     private JButton rejestracjaButton;
 
 
+
     public LoginForm(JFrame parent) {
         super(parent);
         setTitle("Login");
         setContentPane(JPanel1);
-        int width = 450, height = 400;
+        int width = 760, height = 430;
         setMinimumSize(new Dimension(width, height));
         setModal(true);
+        pack();
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 

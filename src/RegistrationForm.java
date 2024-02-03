@@ -31,6 +31,7 @@ public class RegistrationForm extends JDialog{
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                RegisterUser();
 
             }
         });
@@ -67,6 +68,9 @@ public class RegistrationForm extends JDialog{
         user = addUserToDatabase(login, password);
         if(user != null) {
             dispose();
+            JOptionPane.showMessageDialog(this, "User successfully registered!", "Registered", JOptionPane.INFORMATION_MESSAGE);
+            LoginForm loginForm = new LoginForm(null);
+            loginForm.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this,
                     "Failed to register new user.",
@@ -82,7 +86,7 @@ public class RegistrationForm extends JDialog{
 
 
         //sprawdzenie polaczenia do DB
-        final String DB_URL = "jdbc:mysql://localhost/MyStore?serverTimezone=UTC";
+        final String DB_URL = "jdbc:mysql://localhost/Baza_Pojazdow?serverTimezone=UTC";
         final String USERNAME = "root";
         final String PASSWORD = "";
 
