@@ -25,8 +25,6 @@ public class LoginForm extends JDialog{
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-
-
         zalogujButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -36,9 +34,7 @@ public class LoginForm extends JDialog{
                 user = getAuthenticateUser(login, password);
 
                 if(user != null) {
-                    dispose();
-                    DashboardForm dashboardForm = new DashboardForm();
-                    dashboardForm.setVisible(true);
+                    openDashboardForm();
                 }
                 else {
                     JOptionPane.showMessageDialog(LoginForm.this,
@@ -63,6 +59,7 @@ public class LoginForm extends JDialog{
             }
         });
     }
+
 
     public User user;
     private User getAuthenticateUser(String login, String password) {
@@ -93,6 +90,11 @@ public class LoginForm extends JDialog{
             e.printStackTrace();
         }
         return user;
+    }
+    private void openDashboardForm() {
+        dispose();
+        DashboardForm dashboardForm = new DashboardForm(user.login);
+        dashboardForm.setVisible(true);
     }
 
 

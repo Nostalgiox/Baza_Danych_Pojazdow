@@ -7,10 +7,10 @@ import java.sql.*;
 public class DashboardForm extends JFrame{
     private JPanel JPanel1;
     private JButton addButton;
-    private JButton button2;
-    private JButton button3;
-    private JTable CarTable;
-
+    private JButton usunButton;
+    private JButton viewButton;
+    private JLabel userLabel;
+    private String userLogin;
 
 
     Connection conn;
@@ -18,23 +18,41 @@ public class DashboardForm extends JFrame{
     final String USERNAME = "root";
     final String PASSWORD = "";
 
-    public DashboardForm() {
+    public DashboardForm(String login) {
         super("Dashboard Form");
-        setTitle("Application");
+        this.userLogin = login;
+        setTitle("Main Page");
         setContentPane(JPanel1);
         int width = 800, height = 600;
         setMinimumSize(new Dimension(width, height));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        userLabel.setText(login);
+
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                AddCar addCar = new AddCar(null);
+                AddCar addCar = new AddCar(null, userLogin);
                 addCar.setVisible(true);
             }
         });
+        viewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                CarDatabase carDatabase = new CarDatabase(userLogin);
+                carDatabase.setVisible(true);
+            }
+        });
+        usunButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                deleteCar dc = new deleteCar(userLogin);
+                dc.setVisible(true);
+            }
+        });
     }
+
 }
-
-

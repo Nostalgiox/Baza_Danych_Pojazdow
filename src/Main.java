@@ -11,5 +11,6 @@ public class Main {
         catch (Exception e) { e.printStackTrace(); }
         LoginForm loginForm = new LoginForm(null);
         loginForm.setVisible(true);
+
     }
 }

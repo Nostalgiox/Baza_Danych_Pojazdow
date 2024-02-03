@@ -19,11 +19,13 @@ public class AddCar extends JDialog {
     private JRadioButton MotorButton;
     private JButton dodajButton;
     private JButton backButton;
-    public AddCar(JFrame parent) {
+    private String userLogin;
+    public AddCar(JFrame parent, String login) {
         super(parent);
+        this.userLogin = login;
         setTitle("Login");
         setContentPane(JPanel1);
-        int width = 760, height = 430;
+        int width = 430, height = 350;
         setMinimumSize(new Dimension(width, height));
         setModal(true);
         pack();
@@ -42,7 +44,7 @@ public class AddCar extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                DashboardForm dashboardForm = new DashboardForm();
+                DashboardForm dashboardForm = new DashboardForm(userLogin);
                 dashboardForm.setVisible(true);
             }
         });
@@ -91,11 +93,11 @@ public class AddCar extends JDialog {
             if(addedCar != null) {
                 dispose();
                 JOptionPane.showMessageDialog(this, "Car successfully registered!", "Registered", JOptionPane.INFORMATION_MESSAGE);
-                DashboardForm dashboardForm = new DashboardForm();
+                DashboardForm dashboardForm = new DashboardForm(userLogin);
                 dashboardForm.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this,
-                        "Failed to register new user.",
+                        "Failed to register new car.",
                         "Try again",
                         JOptionPane.ERROR_MESSAGE);
             }
