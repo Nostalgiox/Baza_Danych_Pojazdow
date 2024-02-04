@@ -7,6 +7,7 @@ public class Car {
     public String rok_produkcji;
     public String rodzaj = "Osobowy";
 
+}
 //    public Car(String nazwa, String marka, String model, String rodzaj_paliwa, String przebieg, String rok_produkcji) {
 //        this.nazwa = nazwa;
 //        this.marka = marka;
@@ -15,4 +16,4 @@ public class Car {
 //        this.przebieg = przebieg;
 //        this.rok_produkcji = rok_produkcji;
 //    }
-}
+
