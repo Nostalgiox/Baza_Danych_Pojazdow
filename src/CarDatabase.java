@@ -31,6 +31,7 @@ public class CarDatabase extends JFrame {
                         resultSet.getString("id"),
                         resultSet.getString("nazwa"),
                         resultSet.getString("rodzaj_paliwa"),
+                        resultSet.getString("marka"),
                         resultSet.getString("model"),
                         resultSet.getString("przebieg"),
                         resultSet.getString("rok_produkcji"),

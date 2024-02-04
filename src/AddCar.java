@@ -20,16 +20,14 @@ public class AddCar extends JDialog {
     private JButton dodajButton;
     private JButton backButton;
     private String userLogin;
-    public AddCar(JFrame parent, String login) {
-        super(parent);
+    public AddCar(String login) {
         this.userLogin = login;
         setTitle("Login");
         setContentPane(JPanel1);
         int width = 430, height = 350;
         setMinimumSize(new Dimension(width, height));
-        setModal(true);
         pack();
-        setLocationRelativeTo(parent);
+
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 

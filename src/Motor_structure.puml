@@ -1,0 +1,227 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Motor",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1956293523 { 
+   	label=AddCar
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   AddCar1956293523[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AddCar</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   FuelField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   JPanel1: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   MarkaField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   ModelField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   MotorButton: JRadioButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   PrzebiegField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   RokField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   addedCar: Car [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   backButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   carButton: JRadioButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   dodajButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nameField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userLogin: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- RegisterCar()</TD></TR>
+<TR><TD ALIGN="LEFT" >- addCarToDatabase(nazwa: String, marka: String, rodzaj_paliwa: String, model: String, przebieg: String, rok_produkcji: String, rodzaj: String): Car</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_358736343 { 
+   	label=deleteCar
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   deleteCar358736343[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)deleteCar</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   JPanel1: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   backButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   deletedCar: DeletedCars [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userLogin: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usunButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usunPoModeluField: JTextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   usunPoNazwieField: JTextField [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- deleteCarFromDatabase(marka: String, model: String): DeletedCars</TD></TR>
+<TR><TD ALIGN="LEFT" >- removeCar()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_549196472 { 
+   	label=DeletedCars
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   DeletedCars549196472[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DeletedCars</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   marka: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   model: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_67508 { 
+   	label=Car
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Car67508[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Car</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   marka: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   model: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   nazwa: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   przebieg: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   rodzaj: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   rodzaj_paliwa: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   rok_produkcji: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_74532949 { 
+   	label=Motor
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Motor74532949[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Motor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   marka: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   model: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   nazwa: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   przebieg: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   rodzaj: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   rodzaj_paliwa: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   rok_produkcji: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+AddCar1956293523 -> Car67508[label="addedCar
+[0..1]"];
+Car67508 -> DeletedCars549196472[arrowhead=none, arrowtail=empty, dir=both];
+Car67508 -> Motor74532949[arrowhead=none, arrowtail=empty, dir=both];
+deleteCar358736343 -> DeletedCars549196472[label="deletedCar
+[0..1]"];
+    
+}
+@enduml

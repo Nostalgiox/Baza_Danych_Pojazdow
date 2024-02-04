@@ -12,5 +12,8 @@ public class Main {
         LoginForm loginForm = new LoginForm(null);
         loginForm.setVisible(true);
 
+//        DashboardForm df = new DashboardForm("admin");
+//        df.setVisible(true);
+
     }
 }
